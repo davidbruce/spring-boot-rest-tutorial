@@ -16,19 +16,29 @@ class LoadDatabase {
 
     private static final Logger log = LoggerFactory.getLogger(LoadDatabase.class);
 
+    private void createTransaction(TransactionRepository repository, String sender, String recipient, double transactionValue) {
+        log.info("Creating Sample transaction: " + repository.save(new Transaction(sender, recipient, transactionValue)));
+    }
+
+    private void createDefaultTransactions(TransactionRepository repository) {
+        createTransaction(repository, "Clark Kent", "Barry Allen", 50.00);
+        createTransaction(repository, "Diana Prince", "Kendra Saunders", 125.50);
+        createTransaction(repository, "Tony Stark", "Peter Parker", 250.00);
+        createTransaction(repository, "Natalia Romanoff", "Carol Danvers", 37.75);
+    }
+
     @Bean
     CommandLineRunner initDatabase(TransactionRepository repository) {
-        if (repository.findAll().size() < 1) {
+        int transactionCount = repository.findAll().size();
+        log.info("Checking database for transactions.");
+        if (transactionCount == 0) {
             return args -> {
-                log.info("Createing new database.");
-                log.info("Creating Sample transaction: " + repository.save(new Transaction("Clark Kent", "Barry Allen", 50.00)));
-                log.info("Creating Sample transaction: " + repository.save(new Transaction("Diana Prince", "Kendra Saunders", 125.50)));
-                log.info("Creating Sample transaction: " + repository.save(new Transaction("Tony Stark", "Peter Parker", 250.00)));
-                log.info("Creating Sample transaction: " + repository.save(new Transaction("Natalia Romanoff", "Carol Danvers", 37.75)));
+                log.info("Loaded database is empty, creating default transactions.");
+                createDefaultTransactions(repository);
             };
         } else {
             return args -> {
-                log.info("Loading database from file.");
+                log.info("The loaded database has " + transactionCount + " transactions.");
             };
         }
     }
