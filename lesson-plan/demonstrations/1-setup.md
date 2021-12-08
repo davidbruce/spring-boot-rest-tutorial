@@ -1,4 +1,6 @@
-# Setting a Spring Boot Project
+# Setting up a Spring Boot Project
+**Time Estimate: 20 Minutes**
+
 Explain at a high level that web applications are split between a frontend and a backend.
 Continue that a backend is generally where the majority of data processing takes place and
 is where the application communicates with the database.
@@ -32,7 +34,7 @@ Then show the students how to load the project into IntelliJ by simply opening t
 of the unzipped folder.
 
 The project will automatically start indexing and pulling down Maven Dependencies. Once that is
-complete right-click the DemoApplication class file under src/ and press run.
+complete right-click the DemoApplication class file under `src` and press run.
 
 ![Running the App from the IntelliJ Context Menu](../images/Context%20Menu.png)
 
@@ -42,3 +44,4 @@ com.example.demo.DemoApplication         : Started DemoApplication in X.XX secon
 ```
 
 Make sure all students have gotten the application running before continuing. 
+[2. Entities](2-entities.md)
