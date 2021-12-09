@@ -1,9 +1,9 @@
-# Filling out the REST of the API. 
+# Filling out the REST of the API.
 **Time Estimate: 20 Minutes**
 
-So far students have only addressed the R in **CRUD** and now it's time for them to implement the REST. 
+So far students have only addressed the R in **CRUD** and now it's time for them to implement the REST.
 This section will utilize cURL to perform different HTTP requests. cURL is available by default on most
-unix systems, but students should have had it installed before starting. For Windows users it is encouraged
+UNIX systems, but students should have had it installed before starting. For Windows users, it is encouraged
 to use the cURL that comes with Git Bash.  More advanced Windows users can use whichever method they are comfortable
 with obtaining cURL.
 
@@ -19,7 +19,7 @@ Transaction createTransaction(@RequestBody Transaction transaction) {}
 ```
 curl -X POST http://localhost:8080/transactions -H 'Content-type:application/json' -d '{"sender": "Bruce Wayne", "recipient": "Tony Stark", "transactionValue": 50000.00}'
 ```
-* Use the signature below and attempt to fill out a method that updates *just* the transactionValue of a 
+* Use the signature below and attempt to fill out a method that updates *just* the transactionValue of a
   single transaction. Then run the cURL command to change the value of a transaction.
 ```java 
 @PutMapping("/transactions/{id}")

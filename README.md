@@ -17,11 +17,11 @@ To do this we will build a small web service with **Spring Boot** and explore tw
 * cURL
 
 # Table of Contents
-[1. Setup](lesson-plan/demonstrations/1-setup.md)  
-[2. Entities](lesson-plan/demonstrations/2-entities.md)  
-[3. Repositories](lesson-plan/demonstrations/3-repositories.md)  
-[3.1. Verify the Data](lesson-plan/activies/3-1-sql.md)  
-[4. Controllers](lesson-plan/demonstrations/4-controllers.md)  
+[1. Setting up a Spring Boot Project](lesson-plan/demonstrations/1-setup.md)  
+[2. Modeling Tables with Entities](lesson-plan/demonstrations/2-entities.md)  
+[3. Querying the Database with Repositories](lesson-plan/demonstrations/3-repositories.md)  
+[3.1. Verifying the Data Saved](lesson-plan/activies/3-1-sql.md)  
+[4. Exposing data as a REST API](lesson-plan/demonstrations/4-controllers.md)  
 [4.1. Filling out the REST of the API.](lesson-plan/activies/4-1-rest.md)
 [5. Custom Queries with Spring Data](lesson-plan/demonstrations/5-queries.md)  
 [5.1. Refactoring and Filtering](lesson-plan/activies/5-1-refactoring-and-filtering.md) 

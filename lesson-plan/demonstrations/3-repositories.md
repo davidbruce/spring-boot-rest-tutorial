@@ -1,11 +1,11 @@
 # Querying the Database with Repositories
 **Time Estimate: 20 Minutes**
 
-Now that we have an Entity it's time to show the students how they can easily access the underlying 
-table with Spring Data.  
+Now that we have an Entity it's time to show the students how they can easily access the underlying
+table with Spring Data.
 
 First, create a new `Repositories` package under the main package, and create a `TransactionRepository` interface
-under it. Next simply extend the new interface with `JpaRepository<Transaction, Long>`. `JpaRepository<T, ID>` 
+under it. Next simply extend the new interface with `JpaRepository<Transaction, Long>`. `JpaRepository<T, ID>`
 has two type parameters the first is the entity you would like to query against.  The second parameter is
 the type of the id column for the entity.
 
@@ -15,12 +15,12 @@ public interface TransactionRepository extends JpaRepository<Transaction, Long> 
 ```
 
 Explain that the above is all you need for basic **CRUD**` operations on the `Transaction` table.
-**CRUD** which stands for Create, Read, Update, Delete and Sprin Data repositories automatically gives
+**CRUD** which stands for Create, Read, Update, Delete and Spring Data repositories automatically give
 you methods for each.
 
 
 Now let's load some default entities into the database. Create a new `Configuration` package under the main package.
-Then create a new java class named `LoadDatabase` under `Configuration`. Annotate this new class with 
+Then create a new java class named `LoadDatabase` under `Configuration`. Annotate this new class with
 
 `@Configuration` as such:
 ```java
@@ -29,17 +29,17 @@ class LoadDatabase {
 }
 ```
 
-Explain that the `@Configuration` annotation tells Spring that this class contains methods annotated with `@Bean` and 
-run once during application startup. `@Bean` methods that return a `CommandLineRunner` are run after 
+Explain that the `@Configuration` annotation tells Spring that this class contains methods annotated with `@Bean` and
+runs once during application startup. `@Bean` methods that return a `CommandLineRunner` are run after
 everything else has finished loading.
 
-Next create a static final logger called log for the purposes of printing to the console.
+Next, create a static final logger called log for the purposes of printing to the console.
 ```java
 private static final Logger log = LoggerFactory.getLogger(LoadDatabase.class);
 ```
 Then create a helper function for creating some default `transactions`. Here you can explain
 that by calling `repository.save()` will generate an `INSERT` or `UPDATE` SQL statement with the corresponding
-values to the object passed to it. This represents the create porition of **CRUD**.
+values to the object passed to it. This represents the create portion of **CRUD**.
 ```java
 private void createTransaction(TransactionRepository repository, String sender, String recipient, double transactionValue) {
     log.info("Creating Sample transaction: " + repository.save(new Transaction(sender, recipient, transactionValue)));
@@ -59,7 +59,7 @@ Now finally for the `@Bean` that will populate the database. Take note that this
 method, so it will run after Spring has already created its connection to the database. The below function
 will first check if there are any `transactions` in the database, if none are found it will call our
 `createDefaultTransactions` function. The `repository.findAll()` automatically generates a `SELECT *` SQL statement
-for the `transaction` table.  This represents the read porition of **CRUD**. 
+for the `transaction` table.  This represents the read portion of **CRUD**.
 
 ```java
 @Bean
@@ -117,7 +117,7 @@ class LoadDatabase {
 ```
 
 Now when the app is started you will see a log showing that it has either found or created some default
-transactions.  
+transactions.
 
 Next work with the students on the following activity to verify that the default entities were properly
 inserted into the database.  

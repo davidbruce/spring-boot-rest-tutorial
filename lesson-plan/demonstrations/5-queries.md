@@ -1,7 +1,7 @@
 # Custom Queries with Spring Data
 **Time Estimate: 10 Minutes**
 
-At this point the students should have a fully functional CRUD REST API that performs the very basic
+At this point, the students should have a fully functional CRUD REST API that performs the very basic
 operations a developer would expect. Below is an example of what their class could look like up to this point:
 ```java
 @RestController
@@ -64,5 +64,5 @@ actually deleting them.
 List<Transaction> findAllActiveTransactions();
 ```
 
-Now let's move onto the final tasks and wrap up the class:  
+Now let's move on to the final tasks and wrap up the class:  
 [5.1. Refactoring and Filtering](../activies/5-1-refactoring-and-filtering.md)

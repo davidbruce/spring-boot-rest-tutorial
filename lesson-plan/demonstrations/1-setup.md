@@ -44,4 +44,4 @@ com.example.demo.DemoApplication         : Started DemoApplication in X.XX secon
 ```
 
 Make sure all students have gotten the application running before continuing.  
-[2. Entities](2-entities.md)
+[2. Modeling Tables with Entities](2-entities.md)  

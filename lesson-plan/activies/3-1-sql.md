@@ -1,9 +1,9 @@
-# Verify data is being saved
+# Verifying the Data Saved
 **Time Estimate: 15 Minutes**
 
-In this activity we will explore the `transaction` table automatically created by Spring Data. 
-First have the students add the following `@Bean` to their `LoadDatabase` class. This will open up the
-embedded H2 database to direct localhost access on port 8081. 
+In this activity, we will explore the `transaction` table automatically created by Spring Data.
+First, have the students add the following `@Bean` to their `LoadDatabase` class. This will open up the
+embedded H2 database to direct localhost access on port 8081.
 
 ```java
 @Bean(initMethod = "start", destroyMethod = "stop")
@@ -31,8 +31,8 @@ Perform the following tasks in the `Public` schema:
 
 * Run a select query against the `Transactions` table and verify the default transactions were saved.
 * Insert a new transaction with SQL and restart the application.  Note the number of transactions logged.
-* Delete all of the transactions with SQL and restart the applications.  Note that the default transactions 
+* Delete all of the transactions with SQL and restart the applications.  Note that the default transactions
   are recreated.
 
 After the tasks have been completed move onto:  
-[4. Controllers](../demonstrations/4-controllers.md)
+[4. Exposing data as a REST API](4-controllers.md) 
