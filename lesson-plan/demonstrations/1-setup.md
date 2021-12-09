@@ -43,5 +43,5 @@ The IntelliJ Run pane will open and show the application booting up and eventual
 com.example.demo.DemoApplication         : Started DemoApplication in X.XX seconds (JVM running for X.XXX)
 ```
 
-Make sure all students have gotten the application running before continuing. 
+Make sure all students have gotten the application running before continuing.  
 [2. Entities](2-entities.md)

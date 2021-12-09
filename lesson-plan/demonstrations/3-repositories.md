@@ -39,7 +39,7 @@ private static final Logger log = LoggerFactory.getLogger(LoadDatabase.class);
 ```
 Then create a helper function for creating some default `transactions`. Here you can explain
 that by calling `repository.save()` will generate an `INSERT` or `UPDATE` SQL statement with the corresponding
-values to the object passed to it.
+values to the object passed to it. This represents the create porition of **CRUD**.
 ```java
 private void createTransaction(TransactionRepository repository, String sender, String recipient, double transactionValue) {
     log.info("Creating Sample transaction: " + repository.save(new Transaction(sender, recipient, transactionValue)));
@@ -59,7 +59,7 @@ Now finally for the `@Bean` that will populate the database. Take note that this
 method, so it will run after Spring has already created its connection to the database. The below function
 will first check if there are any `transactions` in the database, if none are found it will call our
 `createDefaultTransactions` function. The `repository.findAll()` automatically generates a `SELECT *` SQL statement
-for the transactions table.  This represents the read porition of **CRUD**. 
+for the `transaction` table.  This represents the read porition of **CRUD**. 
 
 ```java
 @Bean

@@ -15,6 +15,6 @@ To do this we will build a small web service with **Spring Boot** and explore tw
 [1. Setup](lesson-plan/demonstrations/1-setup.md)  
 [2. Entities](lesson-plan/demonstrations/2-entities.md)  
 [3. Repositories](lesson-plan/demonstrations/3-repositories.md)  
-[3.1 Verify the Data](../activies/3-1-sql.md)
+[3.1 Verify the Data](../activies/3-1-sql.md)  
 [4. Controllers](lesson-plan/demonstrations/4-controllers.md)  
 [5. Queries](lesson-plan/demonstrations/5-queries.md)  
