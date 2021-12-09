@@ -1,5 +1,5 @@
 # Refactoring and Filtering 
-**Time Estimate: 10 Minutes**
+**Time Estimate: 20 Minutes**
 
 ```java
 @GetMapping("/transactions/filter")
