@@ -1,12 +1,9 @@
-package com.tutorial.Ledger.Controllers;
+# Custom Queries with Spring Data
+**Time Estimate: 10 Minutes**
 
-import com.tutorial.Ledger.Entities.Transaction;
-import com.tutorial.Ledger.Repositories.TransactionRepository;
-import org.springframework.web.bind.annotation.*;
-
-import javax.persistence.EntityNotFoundException;
-import java.util.List;
-
+At this point the students should have a fully functional CRUD REST API that performs the very basic
+operations a developer would expect. Below is an example of what their class could look like up to this point:
+```java
 @RestController
 public class TransactionController {
     private final TransactionRepository repository;
@@ -54,17 +51,18 @@ public class TransactionController {
                 })
                 .orElseThrow(() -> transactionNotFound(id));
     }
-
-    @GetMapping("/transactions/sum")
-    double sumActive() {
-        return repository.findAllActiveTransactions().stream()
-                .map(Transaction::getTransactionValue)
-                .reduce(0.0, Double::sum);
-    }
-
-    @GetMapping("/transactions/filter")
-    List<Transaction> findCharges(@RequestParam double value) {
-        return repository.findWithValueGreaterThan(value);
-    }
-
 }
+```
+
+The last thing to showcase is how a student could write a custom query with Spring Data.
+To do this add the following code to your `TransactionRepository` interface. This query will find all
+transactions that have not been soft-deleted. Soft-deleting is a way to keep a history of records without
+actually deleting them.
+
+```java
+@Query("SELECT t FROM Transaction t WHERE t.softDelete = false")
+List<Transaction> findAllActiveTransactions();
+```
+
+Now let's move onto the final tasks and wrap up the class:  
+[5.1. Refactoring and Filtering](../activies/5-1-refactoring-and-filtering.md)

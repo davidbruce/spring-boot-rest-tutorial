@@ -26,10 +26,13 @@ Below is an example of the connection dialog for the H2 Server Driver in DBeaver
 
 ![DBeaver Connection Prompt](../images/Database%20Connection.png)
 
-# Tasks
+# Student Tasks
 Perform the following tasks in the `Public` schema:
 
 * Run a select query against the `Transactions` table and verify the default transactions were saved.
 * Insert a new transaction with SQL and restart the application.  Note the number of transactions logged.
 * Delete all of the transactions with SQL and restart the applications.  Note that the default transactions 
   are recreated.
+
+After the tasks have been completed move onto:  
+[4. Controllers](../demonstrations/4-controllers.md)

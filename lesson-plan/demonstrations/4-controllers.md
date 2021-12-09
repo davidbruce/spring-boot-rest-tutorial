@@ -47,4 +47,4 @@ Transaction one(@PathVariable Long id) {
 Have students test out the new end point with different ids that exist and some that do not.  
 Now move onto the next activity where students will be given the other common REST mappings to fill out their
 API.  
-[4.1 Filling out the REST of the API](../activies/4-1-rest.md)
+[4.1. Filling out the REST of the API](../activies/4-1-rest.md)

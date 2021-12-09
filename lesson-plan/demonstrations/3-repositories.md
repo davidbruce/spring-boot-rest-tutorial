@@ -121,4 +121,4 @@ transactions.
 
 Next work with the students on the following activity to verify that the default entities were properly
 inserted into the database.  
-[3.1 Verify the Data](../activies/3-1-sql.md)
+[3.1. Verify the Data](../activies/3-1-sql.md)

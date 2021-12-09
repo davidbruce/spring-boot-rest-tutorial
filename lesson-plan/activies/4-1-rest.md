@@ -7,7 +7,7 @@ unix systems, but students should have had it installed before starting. For Win
 to use the cURL that comes with Git Bash.  More advanced Windows users can use whichever method they are comfortable
 with obtaining cURL.
 
-# Tasks
+# Student Tasks
 Perform the following to have a complete CRUD via a REST API:
 
 * Use the signature below and attempt to fill out a method that saves a new transaction to the database. Then
@@ -39,3 +39,6 @@ void deleteTransaction(@PathVariable Long id)
 ```
 curl -X DELETE http://localhost:8080/transactions/IDHERE 
 ```
+
+Next up is a demonstration on how to write custom SQL queries with Spring Boot.  
+[5. Custom Queries with Spring Data](../demonstrations/5-queries.md)  
