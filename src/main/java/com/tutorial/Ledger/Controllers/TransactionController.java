@@ -21,20 +21,18 @@ public class TransactionController {
 
     @GetMapping("/transactions")
     List<Transaction> all() {
-        return repository.findAll();
+        return repository.findAllActiveTransactions();
+    }
+
+    @PostMapping("/transactions")
+    Transaction createTransaction(@RequestBody Transaction transaction) {
+        return repository.save(transaction);
     }
 
     @GetMapping("/transactions/{id}")
-    Transaction one(@PathVariable Long id) {
+    Transaction getTransaction(@PathVariable Long id) {
         return repository.findById(id)
                 .orElseThrow(() -> transactionNotFound(id));
-    }
-
-    @GetMapping("/transactions/sum")
-    double sumActive() {
-        return repository.findAllActiveTransactions().stream()
-                .map(Transaction::getTransactionValue)
-                .reduce(0.0, Double::sum);
     }
 
     @PutMapping("/transactions/{id}")
@@ -45,16 +43,22 @@ public class TransactionController {
                     return repository.save(transaction);
                 })
                 .orElseThrow(() -> transactionNotFound(id));
-
     }
 
     @DeleteMapping("/transactions/{id}")
-    void deleteEmployee(@PathVariable Long id) {
+    void deleteTransaction(@PathVariable Long id) {
         repository.findById(id)
                 .map(transaction -> {
                     transaction.setSoftDelete(true);
                     return repository.save(transaction);
                 })
                 .orElseThrow(() -> transactionNotFound(id));
+    }
+
+    @GetMapping("/transactions/sum")
+    double sumActive() {
+        return repository.findAllActiveTransactions().stream()
+                .map(Transaction::getTransactionValue)
+                .reduce(0.0, Double::sum);
     }
 }
